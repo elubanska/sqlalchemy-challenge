@@ -1,7 +1,16 @@
 #by ELO
 # 1. Import Flask
 from flask import Flask, jsonify
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func, inspect
 
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+
+#print(Base.classes.keys())
 
 # 2. Create an app
 app = Flask(__name__)
