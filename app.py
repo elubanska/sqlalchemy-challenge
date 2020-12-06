@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 import datetime as dt
 
-engine = create_engine("sqlite:///C:/Users/eluba/Documents/GitHub/sqlalchemy-challenge/Resources/hawaii.sqlite")
+engine = create_engine("sqlite://<Your Path Here>/hawaii.sqlite")
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
